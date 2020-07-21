@@ -1,25 +1,39 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {AppContainer} from './components/AppContainer';
+import './style/styles.scss';
+// style/styles.scss';
+import RadioB from './playground/radioB';
+import Select from './playground/Select';
+import AccordionDemo from './playground/AccordionDemo';
+import {FiltersProvider} from './contexts/FilterContext'
+import {SorterProvider} from './contexts/SorterContext'
+import {CircleDemo} from './playground/CircleDemo';
+import InputMU from './playground/InputMU';
+
+
+
+
+
+//    WithStyles 
+import WithStyles from './playground/WithStyles';
+
+// <RadioB></RadioB>
+// <WithStyles></WithStyles> <FiltersProvider>  </FiltersProvider>
+// <AccordionDemo></AccordionDemo>
+//     <CircleDemo></CircleDemo>
 
 function App() {
   return (
+    <SorterProvider>
+    <FiltersProvider>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <AppContainer></AppContainer> 
     </div>
+    </FiltersProvider>
+    </SorterProvider>
   );
 }
 
